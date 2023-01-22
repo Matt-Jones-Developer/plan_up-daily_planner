@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous">
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Plan Up! The Week Day Planner</title>
-  </head>
+    <title>Plan, Up! The Daily Planner</title>
+</head>
 
-  <body>
+<body>
     <header class="jumbotron">
-      <h1 class="display-3">Plan, Up! The Week Day Planner</h1>
-      <h3 class="lead">A simple calendar app for scheduling your work day</h3>
-      <p id="currentDay" class="lead"></p>
+        <div class="flex-container">
+            <img src="./assets/images/icons/icn_lightmode_sunny.svg" alt="sun-icon">
+            <div class="titles">
+                <h1 class="display-3 header-title">Plan, Up! The Work Day Planner</h1>
+                <h3 class="lead">A simple calendar app for scheduling your work day</h3>
+                <p id="currentDay" class="lead"></p>
+                <i class="fa-solid fa-toggle-on toggle"></i>
+            </div>
+            <img src="./assets/images/icons/icn_darkmode_bedtime.svg" alt="moon-icon">
+        </div>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-      
-    </div>
-
+    <main>
+        <div class="container time-block" id="timeBlocks">
+            <!-- Timeblocks go here -->
+            <!-- row x9 -->
+            <!-- col x3 (time, todo/textfield, btn) -->
+        </div>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="./assets/scripts/main.js"></script>
-  </body>
+    <!-- <script src="./assets/scripts/main.js"></script> -->
+    <script src="./assets/scripts/colourSwitch.js"></script>
+</body>
+
 </html>
