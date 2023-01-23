@@ -127,44 +127,31 @@ console.log('currentHour:', $currentHour)
 
 // }
 
-// JQUERY VERSION?
+// JQUERY VERSION? BINGO!
 
-// $('todo').each(function () {
+// const dataValues = $('div#todo')
 
-//     if ($(this).data().value < $currentHour) {
-//         $(this).removeClass('present')
-//         $(this).removeClass('future')
-//         $(this).addClass('past')
-//     }
-//     else if ($(this).data().value > $currentHour) {
-//         $(this).removeClass('past')
-//         $(this).removeClass('present')
-//         $(this).addClass('future')
-//     }
+$('div#todo').each(function () {
 
-//     else {
-//         $(this).removeClass('past')
-//         $(this).removeClass('future')
-//         $(this).addClass('present')
-//     }
+    if ($(this).data().value < $currentHour) {
+        $(this).removeClass('present')
+        $(this).removeClass('future')
+        $(this).addClass('past')
+    }
+    else if ($(this).data().value > $currentHour) {
+        $(this).removeClass('past')
+        $(this).removeClass('present')
+        $(this).addClass('future')
+    }
 
-// });
+    else {
+        $(this).removeClass('past')
+        $(this).removeClass('future')
+        $(this).addClass('present')
+    }
 
-// while and for 
+});
 
-// const indexes = [9,10,11,12,13,14,15,16,17]
-// let i = 0;
-
-// while (i < indexes.length) {
-//     console.log(indexes[i]);
-//     i++;
-// }
-
-// // is the same as 
-
-// for (let i = 0; i < indexes.length; i++) {
-//     console.log(indexes[i]);
-// }
 
 // JQUERY ACCESS
 // accesses all data-values? NO.  Only the first
@@ -183,10 +170,10 @@ console.log($('div#todo')) // accesses all 3 cols
 // const dataValues = document.querySelectorAll("#todo"); 
 
 // must be JQUERY VERSION
-// const dataValues = $('div#todo')
+const dataValues = $('div#todo')
 
 // how to access the data-values ONLY?
-const dataValues = $('div#todo').data().value;
+// const dataValues = $('div#todo').data().value;
 
 for (let i = 0; i < dataValues.length; i++) {
     // this returns divs that CONTAIN data-values only (div#todo)

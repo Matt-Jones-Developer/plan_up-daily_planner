@@ -17,7 +17,10 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* border-left: 1px solid black; */
   padding: 10px;
 }
 
@@ -28,7 +31,6 @@ textarea {
   border-radius: 0;
   border-bottom: 10px solid black;
   margin-top: -2rem;
-  height: 20rem;
 }
 
 .flex-container {
@@ -110,9 +112,11 @@ textarea {
   /* border-top-right-radius: 15px;
   border-bottom-right-radius: 15px; */
   /* border-radius: 1rem; */
+  text-align: center;
   background-color: #06aed5;
   max-width: 6rem;
   color: white;
+  border: none;
 }
 
 .saveBtn i:hover {
@@ -120,6 +124,23 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-.done {
+
+#light-dark-btn {
   border: none;
+  background-color: transparent;
+  margin-top: 2rem;
+
 }
+
+.icon::before {
+  display: inline;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.toggle::before {
+  font: var(--fa-font-solid);
+  content: "\f205";
+  /* background-image: ; */
+}
+
