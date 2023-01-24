@@ -75,7 +75,7 @@ console.log(blocksArray)
 // console.log('emptied array:', todosArray) // []
 
 // on load function - when I do the Jquery version it will not work at all
-// each time the page os refreshed, call the 'get from localStorage'
+// each time the page is refreshed, call the 'get from localStorage'
 
 window.onload = function (event) {
 
@@ -84,11 +84,12 @@ window.onload = function (event) {
     event.preventDefault();
     // get the item from localStorage ??
     localStorage.getItem($($timeBlocks).attr('id'), todoEntry)
+
     // why is this returning the text entry??
     console.log((`value found!: ${localStorage.getItem($($timeBlocks).attr('id'))}`))
+
     // this needs a position (time slot, as well as the text entry)
     // JSON.parse(localStorage.getItem("todoEntry"));
-
 
 
     // use .find to take out of local storage and add it to the page ?
@@ -284,7 +285,8 @@ console.log($timeBlocks)
 
 let $currentHour = moment().hour();
 
-// debug hour testing (to check colors work)
+// debug hour testing (to check colors work) 
+// comment out for actual colour flow based on 9am-5pm
 $currentHour = 12;
 
 // let $dataIndex = $('data-value')
@@ -294,11 +296,6 @@ let $dataIndex = document.getElementById("todo").dataset["value"]
 // console.log($('#todo').data().value)
 
 console.log(document.body.children[1].children[0]); // access timeblocks- incorrectly
-
-
-// create an array for all the todo cols?
-let todoArr = []
-// console.log($('div#todo.col'));
 
 
 // jquery colour switch - where 'this' relates to the todo row (not the numbered id list)
@@ -370,35 +367,6 @@ console.log('data-index(value):', $dataIndex) // 9
 // console.log('getIndex:', getIndex.length)
 
 
-
-// more nonsense 
-
-
-// var to access entire form
-let $todoFormEl = $('#timeBlocks')
-console.log($('#timeBlocks'))
-
-// var to save current todo ID (currently 9AM)
-let $todoInput = $('#todo');
-console.log($('#todo'))
-
-//handle saving to localStorage
-function handleSaveBtn(event) {
-    // Prevent the default behavior
-    event.preventDefault();
-
-    let $newTodo = $("#todo");
-    $newTodo.text($todoInput.val());
-
-    $todoFormEl.append($newTodo)
-
-    // store if saved 
-
-}
-
-// Submit event on the form
-$todoFormEl.on('submit', handleSaveBtn);
-
 // light dark - unfinished, started just to restore my sanity, even that's broken lol
 let $darkButtonEl = $('#light-dark-btn')
 
@@ -418,7 +386,6 @@ $darkButtonEl.on('click', function () {
 
 
 // proper saveBtn event listener
-// will save to localStorage on button click [OK]
 
 // this needs to be .each also - currently only works on 9AM
 const buttons = $('.save')
@@ -430,6 +397,7 @@ buttons.each(function (event) {
     
 })
 
+// will save to localStorage on button click [OK]
 // JQUERY style please!
 $('.save').on('click', function (event) {
 
