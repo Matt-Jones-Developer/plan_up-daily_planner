@@ -17,7 +17,7 @@
 // 97: why when I try to re-append them to '' do they still double up?
 // 79 & 443: when to use EVENT?? 
 // 432: why are the save buttons (after the first one) ignoring the event call? .each required?
-// why am I failing to grasp so much of this?? I watched the lessons again - there's not much in there of use
+// why am I failing to grasp so much of this??
 
 /*
 
@@ -50,7 +50,7 @@ let darkButtonEl = $('#light-dark-btn');
 let $day = $('#currentDay');
 $day.text(moment().format('[Today is] dddd, Do MMMM'))
 
-// more useless variables - trying to learn from the todo lesson
+// more useless letiables - trying to learn from the todo lesson
 
 let $todoEntry = $('#todoEntry')
 console.log($todoEntry)
@@ -60,6 +60,9 @@ console.log($todoList)
 
 let blocksArray = [9, 10, 11, 12, 13, 14, 15, 16, 17]
 console.log(blocksArray)
+
+// make slotId global
+let slotId = 0;
 
 // cannot use JSON with Jquery - correct?
 // pointless remove null and fill with empty []
@@ -86,7 +89,7 @@ window.onload = function (event) {
     localStorage.getItem($($timeBlocks).attr('id'), todoEntry)
 
     // why is this returning the text entry??
-    console.log((`value found!: ${localStorage.getItem($($timeBlocks).attr('id'))}`))
+    console.log((`value found!: ${localStorage.getItem($($timeBlocks).attr('id'), todoEntry)}`))
 
     // this needs a position (time slot, as well as the text entry)
     // JSON.parse(localStorage.getItem("todoEntry"));
@@ -117,6 +120,7 @@ window.onload = function (event) {
     // localStorage.getItem($($timeBlocks).attr('id'), JSON.stringify(todoEntry));
     // JSON.parse(localStorage.getItem($($timeBlocks).attr('id'), todoEntry));
 
+
 }
 
 // if this is the correct 'jquery way' to do on-load function - why isn't the alert working?
@@ -136,6 +140,7 @@ window.onload = function (event) {
 
 
 // })
+
 
 
 
@@ -161,8 +166,8 @@ function renderTimeBlocks() {
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
-<div class="col saveBtn" id="save">
-    <button class="save"><i class="fas fa-save"></i></button>
+<div class="col saveBtn">
+    <button class="save" id="save"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 10" id="10">
@@ -174,8 +179,8 @@ maxlength="58" placeholder="Todo here">
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
-<div class="col saveBtn" id="save">
-    <button class="save"><i class="fas fa-save"></i></button>
+<div class="col saveBtn">
+    <button class="save" id="save"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 11" id="11">
@@ -287,7 +292,7 @@ let $currentHour = moment().hour();
 
 // debug hour testing (to check colors work) 
 // comment out for actual colour flow based on 9am-5pm
-$currentHour = 12;
+// $currentHour = 12;
 
 // let $dataIndex = $('data-value')
 // this only accesses a single value (9AM)
@@ -304,9 +309,12 @@ console.log(document.body.children[1].children[0]); // access timeblocks- incorr
 
 const todoColumns = $('div#todo')
 // what is 'this' element? It is the text areas - the 'todoColumns'
-console.log('todoColumns var:', todoColumns)
+console.log('todoColumns let:', todoColumns)
 
 todoColumns.each(function () {
+
+    // debug
+    // console.log($(this).data().value)
 
     if ($(this).data().value < $currentHour) {
         $(this).removeClass('present')
@@ -326,76 +334,39 @@ todoColumns.each(function () {
     }
 
     // attempting to access the data-value for each in the same loop?
-    let slot = $(this).data('id'); // prints undefined's
-    console.log(slot)
-    console.log($('#9').attr('id')) // just prints 9's
+    // put these id's into a new $let?
+
+    $slotId = $(this).data().value
+    console.log($slotId) // these are the correct values I need
 
 
     // grab each id ?
-    // let id = $(this).attr('id');
-    // console.log(id)
     $(this).attr('id')
-    console.log($(this)) // prints classes??
+    console.log($(this)) // grabs the cols id (div#todo.col.future)
+
 
 });
-
-// for each timeblock, return the rows id (9-17) - this will print each of the data- numbers
-
-$timeBlocks.each(function () {
-    // grab each id 
-    let id = $(this).attr('id');
-    console.log(id)
-})
-
-// getId()
-
-// build a callable function we can reuse
-function getId() {
-    $timeBlocks.each(function () {
-        // grab each id 
-        let id = $(this).attr('id');
-        console.log(id)
-    })
-}
-
-
-
-// how can we find the divs data-index? for each, in a loop?
-console.log('data-index(value):', $dataIndex) // 9
-
-// let getIndex = document.getElementById('todo').getElementsByTagName('div')
-// console.log('getIndex:', getIndex.length)
-
-
-// light dark - unfinished, started just to restore my sanity, even that's broken lol
-let $darkButtonEl = $('#light-dark-btn')
-
-// light theme state
-let isDark = false;
-
-// Click event for light theme toggle
-$darkButtonEl.on('click', function () {
-    if (isDark) {
-        $('body').css({ 'background-color': '#d9e9e8', color: '#1a1a1a' });
-        isDark = !isDark;
-    } else {
-        $('body').css({ 'background-color': '#1a1a1a', color: '#d9e9e8' });
-        isDark = !isDark;
-    }
-});
-
 
 // proper saveBtn event listener
 
 // this needs to be .each also - currently only works on 9AM
-const buttons = $('.save')
-console.log('buttons (save class):',buttons)
+// const buttons = $('.save')
+// console.log('buttons (save class):', buttons)
 
-buttons.each(function (event) {
-    // add the button click event here?\
-    // putting what I have below n here doesn't work
-    
-})
+// buttons.each(function (currentBtn) {
+//     // add the button click event here?\
+//     // putting what I have below n here doesn't work
+//     $('.save').on('click', function (event) {
+//         // define each button
+//         let button = $(this);
+//         console.log(button) // logs ALL buttons
+//         // get the closest button
+//         let todo = button.closest($timeBlocks);
+//         console.log(todo)
+//     })
+
+// })
+
 
 // will save to localStorage on button click [OK]
 // JQUERY style please!
@@ -405,7 +376,7 @@ $('.save').on('click', function (event) {
     // understanding set n get - why wont this get??
 
     // get the text
-    // var text = $('#todoEntry').text();
+    // let text = $('#todoEntry').text();
 
     // // set the item in localStorage
     // localStorage.setItem('todoEntry', text);
@@ -419,24 +390,31 @@ $('.save').on('click', function (event) {
     console.log(button)
     // get the closest button
     let todo = button.closest($timeBlocks);
-    console.log(todo)
-    let id = todo.data('id');
-    console.log(id)
+    console.log(todo) // logs the correct button
+    // let id = todo.data('id');
+    // console.log(id) // undefined
+    // use slot id to grab that cols time slot
+    // console.log($slotId) // undefined??
     // grab key/val and save it
     let todoEntry = $('#todoEntry').val();
     console.log('the value was:' + todoEntry)
 
     // // set the item in localStorage
-                         // the KEY!                // the text entered 
+    // the KEY!                // the text entered 
     localStorage.setItem($($timeBlocks).attr('id'), todoEntry);
+    // localStorage.setItem($slotId, todoEntry);
 
     console.log('key stored:' + $($timeBlocks).attr('id') + ' value stored:' + todoEntry)
+    // console.log('key stored:' + $slotId + ' value stored:' + todoEntry)
 
     // this returns the #textEntry object
-    // console.log($('#todoEntry').html(window.localStorage.getItem($($timeBlocks).attr('id'))));
+    // console.log($($timeBlocks).attr('id'))
+    console.log($slotId) // why is this always 17?  -because it's last in the .each loop 
+   // console.log($('#todoEntry').html(window.localStorage.getItem($($timeBlocks).attr('id'))));
 
     // yet this returns the text entered as a getter !? Why not the iD? 
-    alert(`value stored!: ${localStorage.getItem($($timeBlocks).attr('id'))}`)
+    alert(`value stored!: ${localStorage.getItem($($timeBlocks).attr('id'), todoEntry)}`)
+    // alert(`value stored!: ${localStorage.getItem($slotId, todoEntry)}`)
 
     // });
 
@@ -464,4 +442,51 @@ $('.save').on('click', function (event) {
 //     // debug
 //     console.log("todo entry was saved")
 // });
+
+// light dark - unfinished, started just to restore my sanity, even that's broken lol
+let $darkButtonEl = $('#light-dark-btn')
+
+// light theme state
+let isDark = false;
+
+// Click event for light theme toggle
+$darkButtonEl.on('click', function () {
+    if (isDark) {
+        // $(this).find('i').toggleClass('fa-solid fa-toggle-off fa-solid fa-toggle-on');
+        $('body').css({ 'background-color': '#fff', color: '#1a1a1a' });
+        $('.jumbotron').css({ 'border-bottom': '10px solid black' });
+        isDark = !isDark;
+    } else {
+        $('body').css({ 'background-color': '#1a1a1a', color: '#fff' });
+        $('.jumbotron').css({ 'border-bottom': '9px solid white' });
+        isDark = !isDark;
+    }
+});
+
+
+
+// how to retrieve a localStorage item and render it into the textarea it was saved from in Jquery?
+$(document).ready(function () {
+    let savesnotesbtn = document.getElementById("save");
+
+    //FILL TEXT AREAS WITH NOTES
+    for (let i = 1; i < 9; i++) {
+      $($slotId + i + "input").val(localStorage.getItem("todoEntry" + i));
+    }
+
+    function saveNotes() {
+      //Change styles of button
+      $("#save").removeClass("notSaved").addClass("Saved");
+      // Save data to localstorage
+      for (let i = 1; i < 9; i++) {
+        localStorage.setItem("todoEntry" + i, $("#todoEntry" + i + "input").val());
+      }
+    };
+    savesnotesbtn.addEventListener("click", saveNotes);
+});
+
+
+//Source: https://stackoverflow.com/questions/42963091
+
+
 
