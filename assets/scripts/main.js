@@ -65,7 +65,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="9"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="9"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>
 <div class="row 10" id="10">
@@ -78,7 +78,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="10"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="10"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>
 <div class="row 11" id="11">
@@ -91,7 +91,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="11"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="11"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>
 <div class="row 12" id="12">
@@ -104,7 +104,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="12"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="12"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>
 <div class="row 13" id="13">
@@ -117,7 +117,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="13"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="13"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>
 <div class="row 14" id="14">
@@ -130,7 +130,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="14"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="14"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>
 <div class="row 15" id="15">
@@ -143,7 +143,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="15"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="15"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>
 <div class="row 16" id="16">
@@ -156,7 +156,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="16"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="16"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>
 <div class="row 17" id="17">
@@ -169,7 +169,7 @@ maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save" data-value="17"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="17"><i class="fas fa-save fa-2x"></i></button>
 </div>
 </div>`)
 }
