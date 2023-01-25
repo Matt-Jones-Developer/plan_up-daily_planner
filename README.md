@@ -97,10 +97,9 @@ This course needs to teach me how to be an amazing front-end developer, to THINK
 
 The student is only as good as the material they receive.  I am not taking responsibility for failing this assignment.
 
+You know what I should be an expert on be now (aside from CSS and JS? Setting and switching fontawesome ICONS!! See my mess within.
+
 Very disappointed, once again and it's been a total bust this last fortnight.
-
-
-I had booked in some 1-2-1 private tutoring but have yet to be contacted - it's been over a week.
 
 #
 

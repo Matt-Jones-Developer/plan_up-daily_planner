@@ -290,6 +290,8 @@ $darkButtonEl.on('click', function () {
     } else {
         $('body').css({ 'background-color': '#1a1a1a', color: '#fff' });
         $('.jumbotron').css({ 'border-bottom': '9px solid white' });
+        // presumably a child element 
+        // $('col hour').css({ 'background-color': '#1a1a1a', color: '#fff'})
         isDark = !isDark;
     }
 });
