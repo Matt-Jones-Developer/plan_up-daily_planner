@@ -27,7 +27,6 @@
 
   <p align="center">
     A very basic, ugly, broken planner that doesn't work.<br>
-    <em>What am I learning here?</em>
     <br />
     <a href="https://github.com/Matt-Jones-Developer/plan_up-daily_planner/"><strong>Explore the docs »</strong></a>
     <br />
@@ -80,25 +79,22 @@ TODO:
 
 ## Overview
  
-Another confused, frustrating effort to achieve something that seemed so simple; yet I do not feel like I was shown how to accomplish this at all.  I studied the weeks notes, rewatched videos, thought the Todo app was the clue, but came to realise it had very little to do with what was being asked. Compounded by Jquery made it ridiculous. 
+Another confused, frustrating effort to achieve something that seemed so simple; yet I do not feel like I was shown how to accomplish this at all.  I studied the weeks notes, rewatched videos, thought the Todo app was the clue, but came to realise it had very little to do with what was being asked. Compounded by Jquery made it worse. 
 
 Sadly I will be submitting what I have, currently incomplete and not fully working at all.  I will have to re-submit this to improve my grade once the logic has been achieved.
 
 I felt like a lot of what we were shown in class this week didn't help me.  
 
-It's like in Maths class, the teacher will show you some examples of similar things, re going over it to instill the knowledge, the answers are actually explained somewhere - Maths is Maths, code is code.  
+It's like in Maths class, the teacher will show you some examples of similar things, re going over it to instill the knowledge, the answers are actually explained somewhere.
 
-With this I felt like after a brief (extremely basic) encounter with Javascript, we were immediately thrown onto Jquery - a depreciated, 'browser wars' API that if we really needed to learn (for older site maintenance) I could learn it then, possibly.  I feel like I'd sooner turn the job down or rewrite the entire site in vanilla JS in fairness. 
+With this I felt like after a brief (extremely basic) encounter with Javascript, we were immediately thrown onto Jquery - a depreciated, 'browser wars' API that if we really needed to learn (for older site maintenance) I could learn it then, possibly.  I feel like I'd sooner rewrite the entire site in vanilla JS in fairness. 
 
 ---
 ## Overview: MID-COURSE RANT: (*warning!*)
 #
-This course needs to teach me how to be an amazing front-end developer, to THINK LIKE AN ACTUAL PROGRAMMER, I need to be fluent in Javascript and CSS - I fail to see why the material from the last 3 weeks have even been added to this bootcamp.
+This course needs to teach me how to be an amazing front-end developer, to think like an actual programmer, I need to be fluent in Javascript and CSS - I fail to see why the material from the last 2 weeks have even been added to this bootcamp. 
 
-The student is only as good as the material they receive.  I am not taking responsibility for failing this assignment.
-
-You know what I should be an expert on be now (aside from CSS and JS? Setting and switching fontawesome ICONS!! See my mess within.
-
+The student is only as good as the material they receive.
 Very disappointed, once again and it's been a total bust this last fortnight.
 
 #

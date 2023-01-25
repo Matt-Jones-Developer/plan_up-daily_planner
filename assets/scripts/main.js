@@ -19,15 +19,10 @@
 
 */
 
-// globals
-
-let darkButtonEl = $('#light-dark-btn');
-
 // set the day and display it at the top of the page
 
 let $day = $('#currentDay');
 $day.text(moment().format('[Today is] dddd, Do MMMM'))
-
 
 // make slotId global
 let slotId = 0;
@@ -241,10 +236,10 @@ todoColumns.each(function () {
 // JQUERY style please!
 $('.save').on('click', function () {
 
-    // define each button -- WHY ISNT THIS FOR ALL 'THIS' BUTTONS THAT ARE PRESSED?
+    // define each button
     let button = $(this);
     console.log(button)
-    // get the closest button to stop html[object] - why is this code so broken lol
+    // get the closest button to stop html[object]
     let closestSave = button.closest($timeBlocks);
     console.log('save button for row no. : ', closestSave) // logs the correct button
 
