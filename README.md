@@ -74,7 +74,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-TODO:
+<div align="center">
+  <img src="assets/images/screenshots/planner_main_darkmode.png" alt="header-image" width="800" height="600">
+</div>
+
+I simple day planner to help get your work day organised.  Set an a new todo entry in a time block and hit the save button to store it.
+Upon refresh, the data persists.  A light/dark mode button is also featured.
 
 ## Overview
  
@@ -237,7 +242,7 @@ Deployed Project Link: [https://matt-jones-developer.github.io/plan_up-daily_pla
 [license-url]: https://github.com/Matt-Jones-Developer/plan_up-daily_planner/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: www.linkedin.com/in/matt-jones-zx81
-[main-app-screenshot]: assets/images/screenshots/planner_main.png
+[main-app-screenshot]: assets/images/screenshots/planner_main_darkmode.png
 [product-screenshot]: assets/images/screenshots/planner_main.png
 [console-output-screenshot]: assets/images/screenshots/planner_local_save.png
 [jquery-url]: https://jquery.com/
