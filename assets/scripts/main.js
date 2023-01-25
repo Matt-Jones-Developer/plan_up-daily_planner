@@ -1,28 +1,12 @@
 // daily planner js
 
-/*
-
-// the missing logic:
-
-// when user types into ANY timeslot - and presses the save button
-
-    -> the key (9-17) and value (input)
-    -> must be saved to the localStorage 
-
-    // currently only the FIRST slot is saving to storage (need ALL)
-    // it is saving a key/value pair as required on slot 1
-
-// when the user refreshes browser - the todos must be retrieved 
-    // AND placed into the correct timeslots 
-
-    // method to retrieve data but the save event wont work on the other buttons
-
-*/
-
 // set the day and display it at the top of the page
 
 let $day = $('#currentDay');
-$day.text(moment().format('[Today is] dddd, Do MMMM'))
+$day.text(moment().format('[Today is] dddd, Do MMMM'));
+
+// define the text areas
+let $todoAreas = $('textarea');
 
 // make slotId global
 let slotId = 0;
@@ -44,6 +28,13 @@ $(document).ready(function () {
     $('#17 #todoEntry').val(localStorage.getItem('17'));
     // update log - $timeblocks not even created yet its required to fetch saved entries?
     console.log((`value found!: ${localStorage.getItem($($timeBlocks).attr('id'), todoEntry)}`))
+
+    // better way (use a loop)
+    // for (let i = 0; i < $todoAreas.length; i++) {
+    //     let thisBlock = $todoAreas[i];
+    //     let thisHour = thisBlock.dataset.value;
+    //     thisBlock.textContent = localStorage.getItem(thisHour)
+    // }
 })
 
 // present time blocks for 9am - 5pm
@@ -64,12 +55,12 @@ function renderTimeBlocks() {
     09:00
 </div>
 <div class="col" id="todo" data-value="9">
-<textarea id="todoEntry" name="todo9" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="9" name="todo9" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="9"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 10" id="10">
@@ -77,12 +68,12 @@ maxlength="58" placeholder="Todo here">
     10:00
 </div>
 <div class="col" id="todo" data-value="10">
-<textarea id="todoEntry" name="todo10" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="10" name="todo10" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="10"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 11" id="11">
@@ -90,12 +81,12 @@ maxlength="58" placeholder="Todo here">
     11:00
 </div>
 <div class="col" id="todo" data-value="11">
-<textarea id="todoEntry" name="todo11" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="11" name="todo11" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="11"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 12" id="12">
@@ -103,12 +94,12 @@ maxlength="58" placeholder="Todo here">
     12:00
 </div>
 <div class="col" id="todo" data-value="12">
-<textarea id="todoEntry" name="todo12" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="12" name="todo12" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="12"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 13" id="13">
@@ -116,12 +107,12 @@ maxlength="58" placeholder="Todo here">
     13:00
 </div>
 <div class="col" id="todo" data-value="13">
-<textarea id="todoEntry" name="todo13" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="13" name="todo13" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="13"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 14" id="14">
@@ -129,12 +120,12 @@ maxlength="58" placeholder="Todo here">
     14:00
 </div>
 <div class="col" id="todo" data-value="14">
-<textarea id="todoEntry" name="todo14" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="14" name="todo14" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="14"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 15" id="15">
@@ -142,12 +133,12 @@ maxlength="58" placeholder="Todo here">
     15:00
 </div>
 <div class="col" id="todo" data-value="15">
-<textarea id="todoEntry" name="todo15" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="15" name="todo15" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="15"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 16" id="16">
@@ -155,12 +146,12 @@ maxlength="58" placeholder="Todo here">
     16:00
 </div>
 <div class="col" id="todo" data-value="16">
-<textarea id="todoEntry" name="todo16" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="16" name="todo16" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="16"><i class="fas fa-save"></i></button>
 </div>
 </div>
 <div class="row 17" id="17">
@@ -168,12 +159,12 @@ maxlength="58" placeholder="Todo here">
     17:00
 </div>
 <div class="col" id="todo" data-value="17">
-<textarea id="todoEntry" name="todo17" rows="2" cols="50" 
+<textarea id="todoEntry" data-value="17" name="todo17" rows="2" cols="50" 
 maxlength="58" placeholder="Todo here">
 </textarea>
 </div>
 <div class="col saveBtn">
-    <button class="save"><i class="fas fa-save"></i></button>
+    <button class="save" data-value="17"><i class="fas fa-save"></i></button>
 </div>
 </div>`)
 }
@@ -223,29 +214,36 @@ todoColumns.each(function () {
 
     // attempting to access the data-value for each in the same loop?
 
-    $slotId = $(this).data().value
-    console.log($slotId) // these are the correct values I need
+    // $slotId = $(this).data().value
+    // console.log($slotId) // these are the correct values I need
 
-    // grab each col id
-    $(this).attr('id')
-    console.log($(this)) // grabs the cols id (div#todo.col.future)
+    // // grab each col id
+    // $(this).attr('id')
+    // console.log($(this)) // grabs the cols id (div#todo.col.future)
 
 });
 
 // will save to localStorage on button click [OK - 1st entry only]
 // JQUERY style please!
-$('.save').on('click', function () {
+$('.save').on('click', function (event) {
 
     // define each button
-    let button = $(this);
-    console.log(button)
+    // let button = $(this);
+    // console.log(button)
     // get the closest button to stop html[object]
-    let closestSave = button.closest($timeBlocks);
-    console.log('save button for row no. : ', closestSave) // logs the correct button
+    // let closestSave = button.closest($timeBlocks);
+    // console.log('save button for row no. : ', closestSave) // logs the correct button
+
+    let $slotId = $(this).parent().parent().attr('id');
 
     // grab key/val and save it
-    let todoEntry = $('#todoEntry').val();
-    console.log('the value saved was: ' + todoEntry)
+    let $todoInput = $('textarea[data-value~="' + event.target.parentElement.dataset.value + '"]').val();
+    console.log(event.target.dataset.value); // undefined 
+    console.log($('textarea[data-value~="' + event.target.parentElement.dataset.value + '"]'))
+    console.log($todoInput)
+    console.log('the value saved was: ' + $todoInput)
+
+    localStorage.setItem($slotId, $todoInput);
 
     // Save ANY data value to localstorage - if empty its undefined
     // for (let i = 9; i < 18; i++) {
@@ -257,14 +255,14 @@ $('.save').on('click', function () {
     // }
     // // set the item in localStorage
                          // the KEY              // the text entered 
-    localStorage.setItem($($timeBlocks).attr('id'), todoEntry);
+    // localStorage.setItem($($timeBlocks).attr('id'), todoEntry);
     // localStorage.setItem($slotId, todoEntry);
 
-    console.log('key stored:' + $($timeBlocks).attr('id') + ' & value stored: ' + todoEntry)
-    // console.log('key stored:' + $slotId + ' value stored:' + todoEntry)
+    // console.log('key stored:' + $($timeBlocks).attr('id') + ' & value stored: ' + todoEntry)
+    // // console.log('key stored:' + $slotId + ' value stored:' + todoEntry)
 
-    // alert: logs the key and value entered
-    alert(`value stored!: ${localStorage.getItem($($timeBlocks).attr('id'), todoEntry)}`)
+    // // alert: logs the key and value entered
+    // alert(`value stored!: ${localStorage.getItem($($timeBlocks).attr('id'), todoEntry)}`)
 
 
 })

@@ -130,11 +130,13 @@ The app should:
 
 ### Built With:
 
+<span style="display:inline" align="center" class="logos">
+
 <!-- languages logos -->
+![jquery-logo]::: [![JQUERY]][jquery-url]
+![js-logo]::: [![JavaScript]][javascript-url] ![html5-logo]::: [![HTML5]][html5-url]![css-logo]::: [![CSS]][css-url]
 
-![js-logo]::: [![JavaScript]][javascript-url] ![html5-logo]::: [![HTML5]][html5-url] ![css-logo]::: [![CSS]][css-url]
-
-
+</span>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -249,9 +251,12 @@ Deployed Project Link: [https://matt-jones-developer.github.io/plan_up-daily_pla
 [main-app-screenshot]: assets/images/screenshots/planner_main.png
 [product-screenshot]: assets/images/screenshots/planner_main.png
 [console-output-screenshot]: assets/images/screenshots/planner_local_save.png
+[jquery-url]: https://jquery.com/
 [javascript-url]: https://www.javascript.com
 [html5-url]: https://html5.org/
 [css-url]: https://www.w3.org/Style/CSS/Overview.en.html
+[jquery-logo]: assets/images/logos/logo-jquery.png
 [js-logo]: assets/images/logos/js.svg
 [html5-logo]: assets/images/logos/html5.svg
 [css-logo]: assets/images/logos/css3.svg
+
