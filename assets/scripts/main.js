@@ -253,13 +253,13 @@ $('.save').on('click', function () {
     console.log('the value saved was: ' + todoEntry)
 
     // Save ANY data value to localstorage - if empty its undefined
-    for (let i = 9; i < 18; i++) {
-        localStorage.setItem(i, $("#todoEntry" + i + "textarea").val());
+    // for (let i = 9; i < 18; i++) {
+    //     localStorage.setItem(i, $("#todoEntry" + i + "textarea").val());
 
         // if ("textarea".val() == undefined) {
         //     textarea = '';
         // }
-    }
+    // }
     // // set the item in localStorage
                          // the KEY              // the text entered 
     localStorage.setItem($($timeBlocks).attr('id'), todoEntry);
