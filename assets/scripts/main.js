@@ -5,11 +5,22 @@
 let $day = $('#currentDay');
 $day.text(moment().format('[Today is] dddd, Do MMMM'));
 
+
+// define time blocks ie - 'rows'
+let $timeBlocks = $('.row')
+console.log($timeBlocks)
+
+// using moment to get the current hour
+let $currentHour = moment().hour();
+
+// debug hour testing (to check colors work) 
+// $currentHour = 12;
+
 // define the text areas
 let $todoAreas = $('textarea');
 
-// make slotId global
-let slotId = 0;
+// make blockId global
+let blockId = 0;
 
 // each time the page is refreshed, call the 'get from localStorage'
 
@@ -27,14 +38,8 @@ $(document).ready(function () {
     $('#16 #todoEntry').val(localStorage.getItem('16'));
     $('#17 #todoEntry').val(localStorage.getItem('17'));
     // update log - $timeblocks not even created yet its required to fetch saved entries?
-    console.log((`value found!: ${localStorage.getItem($($timeBlocks).attr('id'), todoEntry)}`))
+    // console.log((`value found!: ${localStorage.getItem($($timeBlocks).attr('id'), todoEntry)}`))
 
-    // better way (use a loop)
-    // for (let i = 0; i < $todoAreas.length; i++) {
-    //     let thisBlock = $todoAreas[i];
-    //     let thisHour = thisBlock.dataset.value;
-    //     thisBlock.textContent = localStorage.getItem(thisHour)
-    // }
 })
 
 // present time blocks for 9am - 5pm
@@ -172,18 +177,6 @@ maxlength="58" placeholder="Todo here">
 
 // set time block colours based on past, present, future 
 
-// define timeblocks ie - 'rows'
-let $timeBlocks = $('.row')
-console.log($timeBlocks)
-
-// using moment to get the current hour
-
-let $currentHour = moment().hour();
-
-// debug hour testing (to check colors work) 
-// comment out for actual colour flow based on 9am-5pm
-// $currentHour = 12;
-
 // jquery colour switch - where 'this' relates to the todo row (not the numbered id list)
 
 const todoColumns = $('div#todo')
@@ -212,62 +205,34 @@ todoColumns.each(function () {
         $(this).addClass('present')
     }
 
-    // attempting to access the data-value for each in the same loop?
-
-    // $slotId = $(this).data().value
-    // console.log($slotId) // these are the correct values I need
-
-    // // grab each col id
-    // $(this).attr('id')
-    // console.log($(this)) // grabs the cols id (div#todo.col.future)
-
 });
 
-// will save to localStorage on button click [OK - 1st entry only]
+// save to localStorage on button click
 // JQUERY style please!
 $('.save').on('click', function (event) {
 
-    // define each button
-    // let button = $(this);
-    // console.log(button)
-    // get the closest button to stop html[object]
-    // let closestSave = button.closest($timeBlocks);
-    // console.log('save button for row no. : ', closestSave) // logs the correct button
+    // define each block ID
 
-    let $slotId = $(this).parent().parent().attr('id');
+    let $blockId = $(this).parent().parent().attr('id');
 
     // grab key/val and save it
     let $todoInput = $('textarea[data-value~="' + event.target.parentElement.dataset.value + '"]').val();
-    console.log(event.target.dataset.value); // undefined 
+    // console.log(event.target.dataset.value); // undefined 
     console.log($('textarea[data-value~="' + event.target.parentElement.dataset.value + '"]'))
     console.log($todoInput)
     console.log('the value saved was: ' + $todoInput)
 
-    localStorage.setItem($slotId, $todoInput);
-
-    // Save ANY data value to localstorage - if empty its undefined
-    // for (let i = 9; i < 18; i++) {
-    //     localStorage.setItem(i, $("#todoEntry" + i + "textarea").val());
-
-        // if ("textarea".val() == undefined) {
-        //     textarea = '';
-        // }
-    // }
-    // // set the item in localStorage
-                         // the KEY              // the text entered 
-    // localStorage.setItem($($timeBlocks).attr('id'), todoEntry);
-    // localStorage.setItem($slotId, todoEntry);
+    localStorage.setItem($blockId, $todoInput);
 
     // console.log('key stored:' + $($timeBlocks).attr('id') + ' & value stored: ' + todoEntry)
-    // // console.log('key stored:' + $slotId + ' value stored:' + todoEntry)
+    console.log('key stored:' + $blockId + ' value stored:' + $todoInput)
 
-    // // alert: logs the key and value entered
-    // alert(`value stored!: ${localStorage.getItem($($timeBlocks).attr('id'), todoEntry)}`)
-
+    // alert: logs the key and value entered
+    // alert(`todo was stored:  ${localStorage.getItem($blockId, $todoInput)}`)
 
 })
 
-// light dark - unfinished, started just to restore my sanity, even that's broken lol
+// light dark - unfinished,
 let $darkButtonEl = $('#light-dark-btn')
 
 // light theme state
@@ -276,11 +241,12 @@ let isDark = false;
 // Click event for light theme toggle
 $darkButtonEl.on('click', function () {
     if (isDark) {
-        // $(this).find('i').toggleClass('fa-solid fa-toggle-off fa-solid fa-toggle-on');
+        $(this).find('i').toggleClass('fa-solid fa-toggle-off fa-solid fa-toggle-on');
         $('body').css({ 'background-color': '#fff', color: '#1a1a1a' });
         $('.jumbotron').css({ 'border-bottom': '10px solid black' });
         isDark = !isDark;
     } else {
+        $(this).find('i').toggleClass('fa-solid fa-toggle-on fa-solid fa-toggle-off ');
         $('body').css({ 'background-color': '#1a1a1a', color: '#fff' });
         $('.jumbotron').css({ 'border-bottom': '9px solid white' });
         // presumably a child element 
