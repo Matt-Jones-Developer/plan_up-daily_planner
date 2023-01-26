@@ -81,18 +81,6 @@
 I simple day planner to help get your work day organised.  Set an a new todo entry in a time block and hit the save button to store it.
 Upon refresh, the data persists.  A light/dark mode button is also featured.
 
-## Overview
- 
-Another confused, frustrating effort to achieve something that seemed so simple; yet I do not feel like I acknowledged how to accomplish this at all.  I studied the weeks notes, re-watched videos, thought the Todo app was the clue, eventually got there, very painfully.  Compounded by Jquery made it worse. 
-
----
-## Overview: MID-COURSE RANT: (*warning!*)
-#
-This course needs to teach me how to be an amazing front-end developer, to think like an actual programmer, I need to be fluent in Javascript and CSS - I am finding the last few weeks material to be too far removed from what I need currently - confidence in good programming, ability to solve problems etc.
-I wish we could spend way more time on vanilla Javascript, advanced CSS and design stuff.  My icons are a mess and the dark/light icon is broken.  
-
-#
-
 <!-- the product -->
 
 ## The Product
@@ -140,9 +128,7 @@ The app should:
 ## Getting Started
 
 This project has a single html page, with a main.js file.  The app will run in your browser.
-When you enter a 9AM appointment, it will save to localStorage.  Upon refresh it will be retrieved from localStorage.  The Light/Dark mode almost done, some poor styling done, but if I am having to spend 20 hours trying to figure out why I don't understand what's being asked, that's the best I can do.
-
-I have yet to get this app improved and will resubmit. 
+When you enter a 9AM appointment, it will save to localStorage.  Upon refresh it will be retrieved from localStorage.  The Light/Dark mode toggle switch allows you to quickly change between themes.  
 
 #
 ### Prerequisites
